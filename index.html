@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Bora Correr Club | Assessoria de Corrida em Santos</title>
+    <meta name="description" content="Junte-se ao Bora Correr Club em Santos! Mais que uma assessoria de corrida, somos uma comunidade apaixonada por saúde e superação. Treinos para todos os níveis.">
+
+    <link rel="canonical" href="https://www.boracorrerclub.com.br/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.boracorrerclub.com.br/">
+    <meta property="og:title" content="Bora Correr Club | Juntos, vamos mais longe">
+    <meta property="og:description" content="Mais que uma assessoria de corrida, uma comunidade apaixonada por saúde, superação e amizade.">
+    <meta property="og:image" content="https://i.postimg.cc/rm05fDTG/Meniinas.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.boracorrerclub.com.br/">
+    <meta property="twitter:title" content="Bora Correr Club | Juntos, vamos mais longe">
+    <meta property="twitter:description" content="Mais que uma assessoria de corrida, uma comunidade apaixonada por saúde, superação e amizade.">
+    <meta property="twitter:image" content="https://i.postimg.cc/rm05fDTG/Meniinas.jpg">
+
+    <!-- Tailwind CSS (Play CDN para prototipagem) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Arquivo de Estilos Personalizados -->
+    <link rel="stylesheet" href="assets/css/estilos.css">
+
+    <script>
+        // Configuração customizada do Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#fef2f6',
+                            DEFAULT: '#f20561',
+                            dark: '#d90456',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Dados Estruturados (Schema Markup) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsClub",
+      "name": "Bora Correr Club",
+      "description": "Assessoria de corrida e comunidade para atletas de todos os níveis.",
+      "url": "https://www.boracorrerclub.com.br/",
+      "logo": "https://i.postimg.cc/9MVkvpvW/Captura-de-tela-2025-06-02-134628.png",
+      "telephone": "+5513996890611",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santos",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/boracorrerclub"
+      ]
+    }
+    </script>
+</head>
+<body class="bg-white text-gray-800">
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Cabeçalho com Navegação Mobile -->
+    <header role="banner" class="bg-gray-900 bg-opacity-50 backdrop-blur-sm fixed top-0 left-0 right-0 z-30 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" aria-label="Bora Correr Club - Página Inicial">
+                <img src="https://i.postimg.cc/9MVkvpvW/Captura-de-tela-2025-06-02-134628.png" alt="Logo do Bora Correr Club" class="h-12 w-auto">
+            </a>
+            <nav role="navigation" aria-label="Navegação principal" class="hidden md:block">
+                <div class="flex space-x-6">
+                    <a href="#sobre" class="text-white transition-all duration-300 nav-link">Sobre Nós</a>
+                    <a href="#treinos" class="text-white transition-all duration-300 nav-link">Treinos</a>
+                    <a href="#blog" class="text-white transition-all duration-300 nav-link">Blog</a>
+                    <a href="#faq" class="text-white transition-all duration-300 nav-link">FAQ</a>
+                </div>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i id="menu-icon" data-feather="menu" class="w-8 h-8 transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-80 absolute top-full left-0 w-full">
+            <nav class="flex flex-col items-center space-y-4 py-8">
+                 <a href="#sobre" class="text-white text-xl hover:text-primary">Sobre Nós</a>
+                 <a href="#treinos" class="text-white text-xl hover:text-primary">Treinos</a>
+                 <a href="#blog" class="text-white text-xl hover:text-primary">Blog</a>
+                 <a href="#faq" class="text-white text-xl hover:text-primary">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Seção 1: Herói -->
+        <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+            <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+            <picture class="absolute inset-0 w-full h-full z-0">
+                <source srcset="https://i.postimg.cc/rm05fDTG/Meniinas.webp" type="image/webp">
+                <img src="https://i.postimg.cc/rm05fDTG/Meniinas.jpg" alt="Grupo de corredoras do Bora Correr Club se abraçando felizes." loading="eager" class="w-full h-full object-cover">
+            </picture>
+            <div class="relative z-10 max-w-3xl px-4"><h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Bora Correr Club: Juntos, vamos mais longe.</h1><p class="text-lg md:text-xl mb-8">Mais que uma assessoria de corrida, uma comunidade apaixonada por movimento e superação.</p><a href="#cta-final" class="bg-primary hover:bg-primary-dark text-white font-bold py-4 px-10 rounded-full text-lg uppercase cta-button">Quero Fazer Parte</a></div>
+        </section>
+
+        <!-- Seção 2: Sobre Nós -->
+        <section id="sobre" class="py-20 bg-white fade-in-section">
+            <div class="container mx-auto px-4"><div class="grid md:grid-cols-2 gap-12 items-center"><div class="order-2 md:order-1"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Nossa História: Paixão que Move</h2><p class="mb-4 text-gray-700">O Bora Correr Club nasceu em Santos, no litoral paulista, do sonho do fundador e coach Caique de criar mais que uma assessoria esportiva: uma família unida pela paixão pela corrida. Nosso objetivo é ajudar você a descobrir sua força, superar limites e se divertir no processo.</p><p class="text-gray-700">Acreditamos que cada corredor tem uma história. Por isso, valorizamos a jornada, celebramos cada conquista e promovemos um ambiente de apoio. Seja iniciante ou maratonista, aqui é seu lugar.</p>
+                <div class="mt-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Ao se juntar a nós, você terá:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-primary mr-2" aria-hidden="true"></i> Planilhas de treino 100% personalizadas.</li>
+                        <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-primary mr-2" aria-hidden="true"></i> Acompanhamento de um coach experiente.</li>
+                        <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-primary mr-2" aria-hidden="true"></i> Uma comunidade que motiva e celebra com você.</li>
+                        <li class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 text-primary mr-2" aria-hidden="true"></i> Treinos em grupo divertidos e desafiadores.</li>
+                    </ul>
+                </div>
+            </div><div class="order-1 md:order-2">
+                <picture>
+                    <source srcset="https://i.postimg.cc/HL2kXJ2L/502326026-18513222052028302-8191159705211381929-n.jpg" type="image/webp">
+                    <img src="https://i.postimg.cc/HL2kXJ2L/502326026-18513222052028302-8191159705211381929-n.jpg" alt="Coach Caique, fundador do Bora Correr Club." class="rounded-lg shadow-xl w-full" loading="lazy">
+                </picture>
+            </div></div></div>
+        </section>
+
+        <!-- Seção 3: Princípios -->
+        <section id="principios" class="py-20 bg-gray-50 fade-in-section">
+            <div class="container mx-auto text-center px-4"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Nossos Princípios</h2><p class="max-w-2xl mx-auto mb-12 text-gray-700">Pilares sólidos que garantem uma experiência completa e segura em nosso clube de corrida.</p><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"><div class="p-6 bg-white rounded-lg shadow-lg principle-card"><div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary-light text-primary mx-auto mb-4"><i data-feather="heart" class="w-8 h-8" aria-hidden="true" focusable="false"></i></div><h3 class="text-xl font-bold mb-2">Saúde em Primeiro Lugar</h3><p class="text-gray-700">Cuidamos do seu bem-estar, respeitando seus limites e promovendo um estilo de vida saudável.</p></div><div class="p-6 bg-white rounded-lg shadow-lg principle-card"><div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary-light text-primary mx-auto mb-4"><i data-feather="target" class="w-8 h-8" aria-hidden="true" focusable="false"></i></div><h3 class="text-xl font-bold mb-2">Treinamento com Ciência</h3><p class="text-gray-700">Aplicamos as melhores práticas para você evoluir de forma consistente em seus treinos.</p></div><div class="p-6 bg-white rounded-lg shadow-lg principle-card"><div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary-light text-primary mx-auto mb-4"><i data-feather="map" class="w-8 h-8" aria-hidden="true" focusable="false"></i></div><h3 class="text-xl font-bold mb-2">Foco na Jornada</h3><p class="text-gray-700">Celebramos cada passo. O caminho é tão importante quanto a linha de chegada.</p></div><div class="p-6 bg-white rounded-lg shadow-lg principle-card"><div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary-light text-primary mx-auto mb-4"><i data-feather="users" class="w-8 h-8" aria-hidden="true" focusable="false"></i></div><h3 class="text-xl font-bold mb-2">A Força do Coletivo</h3><p class="text-gray-700">O apoio, a amizade e a energia do grupo são nosso maior combustível.</p></div></div></div>
+        </section>
+        
+        <!-- Seção 4: Nossos Treinos -->
+        <section id="treinos" class="py-20 bg-white fade-in-section">
+            <div class="container mx-auto px-4 text-center"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Nossa Metodologia de Treino</h2><p class="max-w-3xl mx-auto mb-4 text-gray-700">Oferecemos uma assessoria de corrida completa, com planilhas personalizadas e treinos em grupo para todos os níveis.</p>
+                <p class="text-primary font-semibold mb-12">Atenção: Para garantir a qualidade e atenção individual, abrimos poucas vagas para novos atletas por mês.</p>
+                <div class="grid md:grid-cols-3 gap-8"><div class="p-8 bg-gray-50 rounded-lg shadow-lg training-card"><i data-feather="users" class="w-12 h-12 mx-auto mb-4 text-primary" aria-hidden="true" focusable="false"></i><h3 class="text-2xl font-bold mb-2">Treinos em Grupo</h3><p class="text-gray-700">Energia e motivação em treinos presenciais no Canal 3, em Santos-SP. Horários às 6h00 e 19h30, às terças e quintas-feiras.</p></div><div class="p-8 bg-gray-50 rounded-lg shadow-lg training-card"><i data-feather="clipboard" class="w-12 h-12 mx-auto mb-4 text-primary" aria-hidden="true" focusable="false"></i><h3 class="text-2xl font-bold mb-2">Planilhas Personalizadas</h3><p class="text-gray-700">Sua planilha de corrida individual, entregue via app e baseada em seus objetivos.</p></div><div class="p-8 bg-gray-50 rounded-lg shadow-lg training-card"><i data-feather="globe" class="w-12 h-12 mx-auto mb-4 text-primary" aria-hidden="true" focusable="false"></i><h3 class="text-2xl font-bold mb-2">Assessoria Online</h3><p class="text-gray-700">Não importa onde esteja, nosso time está pronto para te acompanhar de forma online e completa.</p></div></div></div>
+        </section>
+        
+        <!-- Seção 5: Visão -->
+        <section id="visao" class="relative py-24 text-white overflow-hidden fade-in-section">
+            <div class="absolute inset-0 bg-gray-900 bg-opacity-70 z-10"></div>
+            <picture class="absolute inset-0 w-full h-full z-0">
+                <source srcset="https://i.postimg.cc/bvvx26FB/Caique-Cone-na-Mao.webp" type="image/webp">
+                <img src="https://i.postimg.cc/bvvx26FB/Caique-Cone-na-Mao.jpg" alt="Treinador do Bora Correr Club orientando atletas na praia." loading="lazy" class="w-full h-full object-cover">
+            </picture>
+            <div class="container mx-auto text-center px-4 relative z-10"><h2 class="text-3xl md:text-4xl font-bold mb-4">Onde Queremos Chegar</h2><p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">Nossa visão é ser <strong class="text-primary font-semibold">a comunidade de corrida mais acolhedora e inspiradora do Brasil</strong>, transformando vidas através do esporte.</p></div>
+        </section>
+
+        <!-- Seção de Depoimentos -->
+        <section id="depoimentos" class="py-20 bg-gray-50 fade-in-section">
+            <div class="container mx-auto px-4 text-center"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">O que nossos atletas dizem</h2><p class="max-w-2xl mx-auto mb-12 text-gray-700">A prova social de que aqui a jornada é incrível.</p><div class="grid md:grid-cols-3 gap-8"><div class="p-8 bg-white rounded-lg shadow-lg testimonial-card"><img src="https://placehold.co/80x80/fef2f6/f20561?text=A" alt="Avatar da corredora Ana Silva." loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4"><p class="text-gray-700 italic mb-4">"O Bora Correr mudou minha vida! Encontrei amigos, superei desafios e hoje sou mais feliz e saudável."</p><cite class="font-bold not-italic text-primary">- Ana Silva</cite></div><div class="p-8 bg-white rounded-lg shadow-lg testimonial-card"><img src="https://placehold.co/80x80/fef2f6/f20561?text=M" alt="Avatar do corredor Marcos Rocha." loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4"><p class="text-gray-700 italic mb-4">"A metodologia é fantástica. Com a planilha personalizada, baixei meu tempo nos 10k <strong class='text-primary-dark'>de 55 para 48 minutos</strong> em 4 meses. Impossível sem o Caique e a turma!"</p><cite class="font-bold not-italic text-primary">- Marcos Rocha</cite></div><div class="p-8 bg-white rounded-lg shadow-lg testimonial-card"><img src="https://placehold.co/80x80/fef2f6/f20561?text=J" alt="Avatar da corredora Juliana Costa." loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4"><p class="text-gray-700 italic mb-4">"Comecei do zero, com medo. O apoio dos coaches e do grupo foi fundamental. Hoje, correr é minha terapia!"</p><cite class="font-bold not-italic text-primary">- Juliana Costa</cite></div></div></div>
+        </section>
+        
+        <!-- Seção do Blog -->
+        <section id="blog" class="py-20 bg-gray-50 fade-in-section">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Nosso Blog</h2>
+                <p class="max-w-2xl mx-auto mb-12 text-gray-700">Dicas, histórias e novidades do mundo da corrida.</p>
+                <div id="blog-posts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"></div>
+            </div>
+        </section>
+        
+        <!-- Seção Jornada (Antecipação) -->
+        <section id="jornada" class="py-20 bg-white fade-in-section">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-900">Sua Jornada Conosco em 3 Passos</h2>
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white mx-auto mb-4 text-2xl font-bold">1</div>
+                        <h3 class="text-xl font-bold mb-2">Agende seu Treino</h3>
+                        <p class="text-gray-700">Clique no botão, fale conosco no WhatsApp e marque sua aula experimental gratuita.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white mx-auto mb-4 text-2xl font-bold">2</div>
+                        <h3 class="text-xl font-bold mb-2">Sinta nossa Energia</h3>
+                        <p class="text-gray-700">Participe de um treino em grupo, conheça o coach e sinta a força da nossa comunidade.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white mx-auto mb-4 text-2xl font-bold">3</div>
+                        <h3 class="text-xl font-bold mb-2">Receba seu Plano</h3>
+                        <p class="text-gray-700">Após o treino, receba seu plano personalizado e comece a superar seus limites conosco.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção FAQ -->
+        <section id="faq" class="py-20 bg-gray-50 fade-in-section">
+            <div class="container mx-auto px-4 max-w-4xl"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-900">Perguntas Frequentes</h2><p class="max-w-2xl mx-auto mt-4 text-gray-700">Tirando suas dúvidas para você dar o primeiro passo.</p></div><div class="space-y-4"><div class="faq-item bg-white p-6 rounded-lg shadow-sm"><div class="faq-question"><button class="w-full flex justify-between items-center text-left text-xl font-semibold text-gray-800" aria-expanded="false" aria-controls="faq-answer-1"><span>Preciso ter experiência para começar?</span><i data-feather="chevron-down" class="w-6 h-6 chevron-icon transition-transform duration-300" aria-hidden="true" focusable="false"></i></button></div><div id="faq-answer-1" class="faq-answer hidden mt-4 text-gray-700"><p>De forma alguma! Nossos treinos são para todos os níveis. Criaremos um plano perfeito para sua jornada.</p></div></div><div class="faq-item bg-white p-6 rounded-lg shadow-sm"><div class="faq-question"><button class="w-full flex justify-between items-center text-left text-xl font-semibold text-gray-800" aria-expanded="false" aria-controls="faq-answer-2"><span>Como funciona o treino experimental?</span><i data-feather="chevron-down" class="w-6 h-6 chevron-icon transition-transform duration-300" aria-hidden="true" focusable="false"></i></button></div><div id="faq-answer-2" class="faq-answer hidden mt-4 text-gray-700"><p>Clique no botão "Agendar", fale conosco no WhatsApp e marque seu primeiro treino para conhecer nossa energia e metodologia sem compromisso.</p></div></div><div class="faq-item bg-white p-6 rounded-lg shadow-sm"><div class="faq-question"><button class="w-full flex justify-between items-center text-left text-xl font-semibold text-gray-800" aria-expanded="false" aria-controls="faq-answer-3"><span>Quais os locais e horários dos treinos?</span><i data-feather="chevron-down" class="w-6 h-6 chevron-icon transition-transform duration-300" aria-hidden="true" focusable="false"></i></button></div><div id="faq-answer-3" class="faq-answer hidden mt-4 text-gray-700"><p>Nossos treinos em grupo acontecem no Canal 3, em Santos-SP. Os horários são às terças e quintas-feiras, às 6h00 e às 19h30.</p></div></div></div></div>
+        </section>
+
+        <!-- Seção CTA Final via WhatsApp -->
+        <section id="cta-final" class="bg-gray-800 text-white py-20 fade-in-section">
+            <div class="container mx-auto text-center px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">E aí, bora correr com a gente?</h2>
+                <p class="text-lg mb-4 max-w-xl mx-auto">Dê o primeiro passo hoje mesmo para transformar sua vida através da corrida.</p>
+                <div class="bg-primary/20 border border-primary text-white p-4 rounded-lg max-w-lg mx-auto mb-8">
+                    <p class="font-semibold">BÔNUS ESPECIAL: Agende seu treino experimental e <strong class="underline">ganhe 15% de desconto</strong> na primeira mensalidade!</p>
+                </div>
+                <p class="text-lg mb-8 max-w-xl mx-auto">Agende seu treino experimental pelo WhatsApp!</p>
+                <a href="https://wa.me/5513996890611" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-bold py-4 px-10 rounded-full text-lg uppercase cta-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413 0 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.45L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.651 4.383 1.803 6.133l-.903 3.313 3.41-1.74z"/></svg>
+                    Agendar Treino pelo WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer role="contentinfo" class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.instagram.com/boracorrerclub/" target="_blank" rel="noopener noreferrer" aria-label="Nosso Instagram" class="text-gray-400 transition-all duration-300 social-icon"><i data-feather="instagram" class="w-6 h-6"></i></a>
+            </div>
+            <p class="mb-2">&copy; 2025 Bora Correr Club. Todos os direitos reservados.</p>
+            <p class="flex items-center justify-center gap-1 mb-4">Feito com <i data-feather="heart" class="inline-block h-4 w-4 text-primary" aria-hidden="true" focusable="false"></i> por uma comunidade de apaixonados.</p>
+            <a href="#" class="text-sm text-gray-500 hover:text-white">Política de Privacidade</a>
+        </div>
+    </footer>
+
+    <!-- Blog Post Modal -->
+    <div id="blog-modal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="blog-modal-title" aria-describedby="blog-modal-description">
+        <div id="blog-modal-overlay" class="absolute inset-0"></div>
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] flex flex-col relative">
+            <div class="p-4 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+                <h2 id="blog-modal-title" class="text-2xl font-bold text-gray-900"></h2>
+                <button class="close-modal-btn text-gray-500 hover:text-primary" aria-label="Fechar"><i data-feather="x" class="w-8 h-8"></i></button>
+            </div>
+            <div class="overflow-y-auto">
+                <article id="blog-modal-content" class="p-6 md:p-8 text-gray-800 blog-modal-content">
+                    <p id="blog-modal-description" class="sr-only"></p>
+                    <!-- O conteúdo do post será inserido aqui pelo JavaScript -->
+                </article>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5513996890611" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg cta-button md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413 0 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.45L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.651 4.383 1.803 6.133l-.903 3.313 3.41-1.74z"/></svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
