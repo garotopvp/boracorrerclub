@@ -89,43 +89,20 @@
         .blog-modal-content ul { list-style-position: inside; margin-left: 1rem; margin-bottom: 1rem; }
         .blog-modal-content li { margin-bottom: 0.5rem; }
         
-        /* Acessibilidade: Skip Link */
-        .skip-link {
-            position: absolute;
-            left: -9999px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            z-index: -999;
-        }
-        .skip-link:focus, .skip-link:active {
-            position: static;
-            width: auto;
-            height: auto;
-            overflow: visible;
-            z-index: 999;
-            background-color: #f20561;
-            color: white;
-            padding: 1rem;
-            display: inline-block;
-        }
+        .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: -999; }
+        .skip-link:focus, .skip-link:active { position: static; width: auto; height: auto; overflow: visible; z-index: 999; background-color: #f20561; color: white; padding: 1rem; display: inline-block; }
 
-        /* Acessibilidade: Redução de movimento */
         @media (prefers-reduced-motion: reduce) {
-          .fade-in-section, .cta-button, .principle-card, .training-card, .testimonial-card, .social-icon, .nav-link {
-            transition: none !important;
-          }
+          .fade-in-section, .cta-button, .principle-card, .training-card, .testimonial-card, .social-icon, .nav-link { transition: none !important; }
         }
     </style>
 </head>
 <body class="bg-white text-gray-800">
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-    <!-- Cabeçalho com Navegação Mobile -->
     <header role="banner" class="bg-gray-900 bg-opacity-50 backdrop-blur-sm fixed top-0 left-0 right-0 z-30 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" aria-label="Bora Correr Club - Página Inicial">
+            <a href="index.html" aria-label="Bora Correr Club - Página Inicial">
                 <img src="https://i.postimg.cc/9MVkvpvW/Captura-de-tela-2025-06-02-134628.png" alt="Logo do Bora Correr Club" class="h-12 w-auto">
             </a>
             
@@ -133,6 +110,7 @@
                 <div class="flex space-x-6">
                     <a href="#sobre" class="text-white transition-all duration-300 nav-link">Sobre Nós</a>
                     <a href="#treinos" class="text-white transition-all duration-300 nav-link">Treinos</a>
+                    <a href="calculadora.html" class="text-white transition-all duration-300 nav-link">Calculadora</a>
                     <a href="#blog" class="text-white transition-all duration-300 nav-link">Blog</a>
                     <a href="#faq" class="text-white transition-all duration-300 nav-link">FAQ</a>
                 </div>
@@ -147,10 +125,11 @@
         
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-80 absolute top-full left-0 w-full">
             <nav class="flex flex-col items-center space-y-4 py-8">
-                 <a href="#sobre" class="text-white text-xl hover:text-primary">Sobre Nós</a>
-                 <a href="#treinos" class="text-white text-xl hover:text-primary">Treinos</a>
-                 <a href="#blog" class="text-white text-xl hover:text-primary">Blog</a>
-                 <a href="#faq" class="text-white text-xl hover:text-primary">FAQ</a>
+               <a href="#sobre" class="text-white text-xl hover:text-primary">Sobre Nós</a>
+               <a href="#treinos" class="text-white text-xl hover:text-primary">Treinos</a>
+               <a href="calculadora.html" class="text-white text-xl hover:text-primary">Calculadora</a>
+               <a href="#blog" class="text-white text-xl hover:text-primary">Blog</a>
+               <a href="#faq" class="text-white text-xl hover:text-primary">FAQ</a>
             </nav>
         </div>
     </header>
@@ -212,7 +191,7 @@
         <section id="depoimentos" class="py-20 bg-gray-50 fade-in-section">
             <div class="container mx-auto px-4 text-center"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">O que nossos atletas dizem</h2><p class="max-w-2xl mx-auto mb-12 text-gray-700">A prova social de que aqui a jornada é incrível.</p><div class="grid md:grid-cols-3 gap-8"><div class="p-8 bg-white rounded-lg shadow-lg testimonial-card"><img src="https://placehold.co/80x80/fef2f6/f20561?text=A" alt="Avatar da corredora Ana Silva." loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4"><p class="text-gray-700 italic mb-4">"O Bora Correr mudou minha vida! Encontrei amigos, superei desafios e hoje sou mais feliz e saudável."</p><cite class="font-bold not-italic text-primary">- Ana Silva</cite></div><div class="p-8 bg-white rounded-lg shadow-lg testimonial-card"><img src="https://placehold.co/80x80/fef2f6/f20561?text=M" alt="Avatar do corredor Marcos Rocha." loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4"><p class="text-gray-700 italic mb-4">"A metodologia é fantástica. Com a planilha personalizada, baixei meu tempo nos 10k <strong class='text-primary-dark'>de 55 para 48 minutos</strong> em 4 meses. Impossível sem o Caique e a turma!"</p><cite class="font-bold not-italic text-primary">- Marcos Rocha</cite></div><div class="p-8 bg-white rounded-lg shadow-lg testimonial-card"><img src="https://placehold.co/80x80/fef2f6/f20561?text=J" alt="Avatar da corredora Juliana Costa." loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4"><p class="text-gray-700 italic mb-4">"Comecei do zero, com medo. O apoio dos coaches e do grupo foi fundamental. Hoje, correr é minha terapia!"</p><cite class="font-bold not-italic text-primary">- Juliana Costa</cite></div></div></div>
         </section>
-        
+
         <!-- Seção do Blog -->
         <section id="blog" class="py-20 bg-gray-50 fade-in-section">
             <div class="container mx-auto px-4 text-center">
@@ -420,6 +399,106 @@
                 container.innerHTML = cardsHtml;
                 feather.replace();
             };
+            
+            // --- Lógica da Calculadora ---
+            const form = document.getElementById('calculatorForm');
+            const minInput = document.getElementById('minutes');
+            const secInput = document.getElementById('seconds');
+            const calculateBtn = document.getElementById('calculateBtn');
+            const errorBox = document.getElementById('error-message');
+            const results = document.getElementById('results');
+            const vo2Display = document.getElementById('vo2maxResult');
+            const paceDisplay = document.getElementById('paceResult');
+            const tableBody = document.getElementById('pacesTable');
+
+            const ZONAS_DE_TREINO = [
+                { name: 'Z5', pse: '9-10', desc: 'Máximo', example: 'Esforço máximo', upper: 0.99, lower: 0.90, colorClass: 'z5' },
+                { name: 'Z4', pse: '7-8', desc: 'Muito Intenso', example: 'Difícil de manter', upper: 1.05, lower: 1.00, colorClass: 'z4' },
+                { name: 'Z3', pse: '5-6', desc: 'Intenso', example: 'Respiração profunda', upper: 1.14, lower: 1.06, colorClass: 'z3' },
+                { name: 'Z2', pse: '3-4', desc: 'Moderado', example: 'Confortável', upper: 1.29, lower: 1.15, colorClass: 'z2' },
+                { name: 'Z1', pse: '1-2', desc: 'Leve', example: 'Muito fácil', lower: 1.30, colorClass: 'z1' }
+            ];
+
+            function formatTime(segundos) {
+                const min = Math.floor(segundos / 60);
+                const sec = Math.round(segundos % 60);
+                return `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+            }
+            
+            function calcularVo2max(dist, tempoSeg) {
+                const vel = dist / (tempoSeg / 60);
+                return -4.60 + 0.18225 * vel + 0.000104 * vel ** 2;
+            }
+
+            function validarTempo(min, sec) {
+                if (isNaN(min) || isNaN(sec)) {
+                    return 'Insira números válidos para minutos e segundos.';
+                }
+                const totalSec = min * 60 + sec;
+                if (totalSec < 300 || totalSec > 1800) {
+                    return 'Tempo fora do intervalo aceitável (5 a 30 min).';
+                }
+                return null;
+            }
+
+            function showError(msg) {
+                errorBox.textContent = '⚠️ ' + msg;
+                errorBox.classList.remove('hidden');
+                results.classList.add('hidden', 'opacity-0');
+            }
+
+            function hideError() {
+                errorBox.classList.add('hidden');
+            }
+
+            function renderResultsTable(paceKm) {
+                tableBody.innerHTML = '';
+                const fragment = document.createDocumentFragment();
+                [...ZONAS_DE_TREINO].reverse().forEach(z => {
+                    const pMin = paceKm * z.lower;
+                    const pMax = z.upper ? paceKm * z.upper : null;
+                    const tr = document.createElement('tr');
+                    const paceText = pMax ? `${formatTime(pMax)} - ${formatTime(pMin)}` : `Mais lento que ${formatTime(pMin)}`;
+                    tr.innerHTML = `
+                        <td class="px-4 py-4"><div class="zone-badge ${z.colorClass} w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm">${z.name}</div></td>
+                        <td class="text-center font-semibold text-sm">${z.pse}</td>
+                        <td class="text-sm text-gray-600">${z.desc}: <em class="italic">${z.example}</em></td>
+                        <td class="font-semibold text-sm">${paceText}</td>`;
+                    fragment.appendChild(tr);
+                });
+                tableBody.appendChild(fragment);
+            }
+            
+            function handleFormSubmit(e) {
+                e.preventDefault();
+                calculateBtn.disabled = true;
+                calculateBtn.textContent = 'Calculando...';
+                const min = parseInt(minInput.value, 10);
+                const sec = parseInt(secInput.value, 10);
+                const erro = validarTempo(min, sec);
+                if (erro) {
+                    showError(erro);
+                    calculateBtn.disabled = false;
+                    calculateBtn.textContent = 'Calcular Resultados';
+                    return;
+                }
+                hideError();
+                const totalSec = min * 60 + sec;
+                const vo2 = calcularVo2max(3000, totalSec);
+                const paceKm = totalSec / 3;
+                vo2Display.textContent = vo2.toLocaleString('pt-BR', { maximumFractionDigits: 1 });
+                paceDisplay.textContent = formatTime(paceKm) + ' /km';
+                renderResultsTable(paceKm);
+                results.classList.remove('hidden');
+                setTimeout(() => results.classList.remove('opacity-0', '-translate-y-4'), 10);
+                results.focus();
+                calculateBtn.disabled = false;
+                calculateBtn.textContent = 'Calcular Resultados';
+            }
+
+            if(form) {
+                form.addEventListener('submit', handleFormSubmit);
+            }
             
             generateBlogCards();
             setupEventListeners();
