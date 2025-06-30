@@ -105,6 +105,17 @@
                             <p>Após descobrir sua VAM, podemos definir Zonas de Treinamento como percentuais dessa velocidade. Cada percentual corresponde a uma intensidade e a um objetivo fisiológico diferente (recuperação, resistência, limiar, etc.). Treinar com base em %VAM é uma das formas mais eficazes de garantir que você está aplicando o estímulo correto para cada tipo de treino, otimizando seus resultados.</p>
                         </div>
                     </div>
+                    <div class="faq-item bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                        <div class="faq-question">
+                            <button class="w-full flex justify-between items-center text-left font-semibold text-gray-800" aria-expanded="false" aria-controls="faq-answer-calc-3">
+                                <span>O que é Percepção Subjetiva de Esforço (PSE)?</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 chevron-icon transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                            </button>
+                        </div>
+                        <div id="faq-answer-calc-3" class="faq-answer hidden mt-4 text-gray-700 prose prose-sm max-w-none">
+                            <p>A PSE é uma escala (aqui usamos de 1 a 10) que mede o quão intenso você <strong>sente</strong> que o exercício está. É uma ferramenta poderosa para aprender a "ouvir seu corpo". Enquanto o relógio mostra os números (pace), a PSE te ajuda a conectar esses números com sua sensação real de esforço, sendo fundamental para ajustar o treino no dia a dia e evitar treinar forte demais em dias de cansaço, ou leve demais quando se sentir bem.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -130,11 +141,11 @@
                     <h3 class="text-xl font-bold text-gray-800 text-center mb-4">Projeção de Tempos de Prova</h3>
                     <div class="overflow-x-auto">
                         <table class="min-w-full bg-white border border-gray-200 rounded-lg">
-                             <caption class="sr-only">Tabela com a projeção de tempos para provas de 5km, 10km e 21.1km.</caption>
+                             <caption class="sr-only">Tabela com a projeção de tempos para provas.</caption>
                             <thead class="bg-gray-50">
                                 <tr>
-                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Distância</th>
-                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Tempo Estimado</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Distância</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Tempo Estimado</th>
                                 </tr>
                             </thead>
                             <tbody id="projectionTable" class="divide-y divide-gray-200"></tbody>
@@ -142,15 +153,17 @@
                     </div>
                 </div>
 
-                <h3 class="text-xl font-bold text-gray-800 text-center mb-4">Zonas de Treinamento (%VAM)</h3>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-4">Zonas de Treinamento (%VAM) e Percepção de Esforço (PSE)</h3>
                 <div class="overflow-x-auto">
                     <table class="min-w-full bg-white border border-gray-200 rounded-lg">
                         <caption class="sr-only">Tabela de Zonas de Treinamento com base no seu resultado.</caption>
                         <thead class="bg-gray-50">
                             <tr>
-                                <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Zona</th>
-                                <th scope="col" class="px-4 py-3 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Intensidade (%VAM)</th>
-                                <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Pace Sugerido</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Zona</th>
+                                <th scope="col" class="px-6 py-3 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Intensidade (%VAM)</th>
+                                <th scope="col" class="px-6 py-3 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">PSE (1-10)</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Descrição do Esforço</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Pace Sugerido</th>
                             </tr>
                         </thead>
                         <tbody id="pacesTable" class="divide-y divide-gray-200"></tbody>
@@ -178,30 +191,39 @@
 
         // --- Constantes e Configurações ---
         const ZONAS_DE_TREINO = [
-            { name: 'Z5: VO₂ Máx', intensity: '95-105%', lower: 0.95, upper: 1.05, colorClass: 'z5' },
-            { name: 'Z4: Limiar Anaeróbio', intensity: '88-92%', lower: 0.88, upper: 0.92, colorClass: 'z4' },
-            { name: 'Z3: Ritmo Controlado', intensity: '80-85%', lower: 0.80, upper: 0.85, colorClass: 'z3' },
-            { name: 'Z2: Endurance', intensity: '70-75%', lower: 0.70, upper: 0.75, colorClass: 'z2' },
-            { name: 'Z1: Recuperação', intensity: '< 65%', lower: 0.60, upper: 0.65, colorClass: 'z1' }
+            { name: 'Z5: VO₂ Máx', intensity: '95-105%', pse: '9-10', example: 'Esforço máximo, quase impossível de sustentar.', lower: 0.95, upper: 1.05, colorClass: 'z5' },
+            { name: 'Z4: Limiar Anaeróbio', intensity: '88-92%', pse: '7-8', example: 'Difícil, a conversa é limitada a poucas palavras.', lower: 0.88, upper: 0.92, colorClass: 'z4' },
+            { name: 'Z3: Ritmo Controlado', intensity: '80-85%', pse: '5-6', example: 'Confortavelmente difícil, a respiração é profunda.', lower: 0.80, upper: 0.85, colorClass: 'z3' },
+            { name: 'Z2: Endurance', intensity: '70-75%', pse: '3-4', example: 'Fácil, pode manter uma conversa completa.', lower: 0.70, upper: 0.75, colorClass: 'z2' },
+            { name: 'Z1: Recuperação', intensity: '< 65%', pse: '1-2', example: 'Muito leve, esforço quase imperceptível.', lower: 0.60, upper: 0.65, colorClass: 'z1' }
         ];
 
         // --- Funções Puras e Auxiliares ---
 
-        function formatTime(segundos) {
-            const min = Math.floor(segundos / 60);
-            const sec = Math.round(segundos % 60);
-            return `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+        function formatTime(totalSeconds) {
+            if (isNaN(totalSeconds) || totalSeconds < 0) return "00:00:00";
+            
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = Math.round(totalSeconds % 60);
+
+            if (hours > 0) {
+                return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            } else {
+                return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            }
         }
         
         function calcularProjecao(vam_kmh) {
             const pace_vVAM_sec_km = 3600 / vam_kmh;
-            const t1 = pace_vVAM_sec_km; // Tempo para 1km na VAM
+            const t1 = pace_vVAM_sec_km;
             const d1 = 1;
-            const exponent = 1.06; // Riegel's endurance model exponent
+            const exponent = 1.06;
             const projecoes = [
                 { dist: '5 km', tempo: t1 * Math.pow(5 / d1, exponent) },
                 { dist: '10 km', tempo: t1 * Math.pow(10 / d1, exponent) },
-                { dist: '21.1 km (Meia Maratona)', tempo: t1 * Math.pow(21.0975 / d1, exponent) }
+                { dist: '21.1 km (Meia Maratona)', tempo: t1 * Math.pow(21.0975 / d1, exponent) },
+                { dist: '42.2 km (Maratona)', tempo: t1 * Math.pow(42.195 / d1, exponent) }
             ];
             return projecoes;
         }
@@ -227,9 +249,11 @@
                 const tr = document.createElement('tr');
                 const paceText = z.upper ? `${formatTime(paceMax)} - ${formatTime(paceMin)}` : `Mais lento que ${formatTime(paceMax)}`;
                 tr.innerHTML = `
-                    <td class="px-4 py-4"><div class="zone-badge ${z.colorClass} w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm">${z.name.split(':')[0]}</div></td>
-                    <td class="text-center font-semibold text-sm">${z.intensity}</td>
-                    <td class="font-semibold text-sm">${paceText}</td>`;
+                    <td class="px-6 py-4"><div class="zone-badge ${z.colorClass} w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm">${z.name.split(':')[0]}</div></td>
+                    <td class="px-6 py-4 text-center font-semibold text-sm">${z.intensity}</td>
+                    <td class="px-6 py-4 text-center font-semibold text-sm">${z.pse}</td>
+                    <td class="px-6 py-4 text-sm text-gray-600"><em class="italic">${z.example}</em></td>
+                    <td class="px-6 py-4 font-semibold text-sm">${paceText}</td>`;
                 fragment.appendChild(tr);
             });
             pacesTableBody.appendChild(fragment);
@@ -241,8 +265,8 @@
             projecoes.forEach(p => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td class="px-4 py-4 font-medium text-gray-800">${p.dist}</td>
-                    <td class="px-4 py-4 font-semibold text-primary">${formatTime(p.tempo)}</td>`;
+                    <td class="px-6 py-4 font-medium text-gray-800">${p.dist}</td>
+                    <td class="px-6 py-4 font-semibold text-primary">${formatTime(p.tempo)}</td>`;
                 fragment.appendChild(tr);
             });
             projectionTableBody.appendChild(fragment);
@@ -274,22 +298,20 @@
                 return;
             }
             const totalSec = minutes * 60 + seconds;
-            if (totalSec < 300 || totalSec > 1800) { // Validação para tempo de 3km (5 a 30 min)
-                 showError('Insira um tempo realista (entre 5min e 30min).');
+            if (totalSec < 300 || totalSec > 1800) {
+                showError('Insira um tempo realista (entre 5min e 30min).');
                 calculateBtn.disabled = false;
                 calculateBtn.textContent = 'Calcular Resultados';
                 return;
             }
             hideError();
 
-            // Cálculos baseados no tempo de 3km
             const vel_m_min = 3000 / (totalSec / 60);
-            const vam_kmh = vel_m_min * 0.06; // Converte m/min para km/h
+            const vam_kmh = vel_m_min * 0.06;
             const vo2max = vam_kmh * 3.5;
-            const pace_vVAM = 3600 / vam_kmh; // Pace na VAM em segundos/km
+            const pace_vVAM = 3600 / vam_kmh;
             const projecoes = calcularProjecao(vam_kmh);
             
-            // Exibir resultados
             vamDisplay.textContent = `${vam_kmh.toFixed(1)} km/h`;
             vo2Display.textContent = vo2max.toFixed(1);
             paceDisplay.textContent = `${formatTime(pace_vVAM)} /km`;
