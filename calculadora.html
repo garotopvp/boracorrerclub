@@ -5,23 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Título e Meta Descrição Otimizados para SEO -->
-    <title>Calculadora de Pace e VO₂ Máx | Bora Correr Club</title>
-    <meta name="description" content="Calcule seu VO₂ Máx e descubra suas zonas de treinamento de corrida com nossa calculadora gratuita baseada no teste de 3km. Uma ferramenta do Bora Correr Club.">
+    <title>Calculadora de VAM e Zonas de Treino | Bora Correr Club</title>
+    <meta name="description" content="Calcule sua Velocidade Aeróbica Máxima (VAM), VO₂ Máx e zonas de treinamento a partir do seu tempo no teste de 3km.">
 
-    <!-- Canonical Tag -->
-    <link rel="canonical" href="https://www.boracorrerclub.com.br/calculadora.html">
-
-    <!-- Tailwind CSS (Play CDN para prototipagem) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Poppins com display=swap para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <script>
-        // Configuração customizada do Tailwind
         tailwind.config = {
             theme: {
                 extend: {
@@ -39,37 +32,33 @@
 
     <style>
         body { font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        .cta-button { transition: all 0.3s ease; }
-        .cta-button:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(242, 5, 97, 0.25); }
-        .social-icon:hover { transform: scale(1.2); color: #f20561; }
-        .nav-link:hover { color: #f20561; transform: translateY(-2px); }
-        
-        /* Estilos da Calculadora */
         .zone-badge.z1 { background-color: #0ea5e9; } /* sky-500 */
         .zone-badge.z2 { background-color: #22c55e; } /* green-500 */
         .zone-badge.z3 { background-color: #eab308; } /* yellow-500 */
         .zone-badge.z4 { background-color: #f97316; } /* orange-500 */
         .zone-badge.z5 { background-color: #ef4444; } /* red-500 */
+        .faq-question button[aria-expanded="true"] .chevron-icon { transform: rotate(180deg); }
     </style>
 </head>
 <body class="bg-gray-100">
-    <!-- Cabeçalho Simplificado -->
-    <header role="banner" class="bg-white shadow-md p-4">
+
+    <header role="banner" class="bg-gray-900 bg-opacity-50 backdrop-blur-sm shadow-md p-4 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" aria-label="Bora Correr Club - Página Inicial">
+            <a href="index.html" aria-label="Voltar para a página Inicial do Bora Correr Club">
                 <img src="https://i.postimg.cc/9MVkvpvW/Captura-de-tela-2025-06-02-134628.png" alt="Logo do Bora Correr Club" class="h-12 w-auto">
             </a>
-            <a href="index.html" class="font-semibold text-primary hover:text-primary-dark transition-colors nav-link">
+            <a href="index.html" class="text-white font-semibold hover:text-primary transition-colors">
                 &larr; Voltar ao site principal
             </a>
         </div>
     </header>
 
-    <main id="main-content" class="flex items-center justify-center min-h-[calc(100vh-160px)] py-12">
-        <div class="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-6 md:p-8 mx-4">
+    <main id="main-content" class="py-10">
+        <div class="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-6 md:p-8 mx-auto my-8">
+
             <div class="text-center mb-6">
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Calculadora de Teste de 3.000 metros</h1>
-                <p class="text-gray-500 mt-2">Use nossa ferramenta para estimar seu VO₂ Máx e descobrir suas zonas de treino.</p>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Calculadora de VAM</h1>
+                <p class="text-gray-500 mt-2">Use seu tempo no teste de 3km para encontrar sua Velocidade Aeróbica Máxima.</p>
             </div>
 
             <form id="calculatorForm" class="bg-gray-50 p-6 rounded-xl border border-gray-200">
@@ -77,11 +66,11 @@
                 <div class="grid grid-cols-2 gap-4 items-center max-w-sm mx-auto">
                     <div>
                         <label for="minutes" class="block text-sm font-medium text-gray-700 text-center mb-1">Minutos</label>
-                        <input type="number" id="minutes" inputmode="numeric" class="w-full px-4 py-3 text-center text-lg bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-dark focus:border-primary-dark transition-all" placeholder="15" min="5" max="30" required>
+                        <input type="number" id="minutes" inputmode="numeric" class="w-full px-4 py-3 text-center text-lg bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-dark transition-all" placeholder="15" required>
                     </div>
                     <div>
                         <label for="seconds" class="block text-sm font-medium text-gray-700 text-center mb-1">Segundos</label>
-                        <input type="number" id="seconds" inputmode="numeric" class="w-full px-4 py-3 text-center text-lg bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-dark focus:border-primary-dark transition-all" placeholder="00" min="0" max="59" required>
+                        <input type="number" id="seconds" inputmode="numeric" class="w-full px-4 py-3 text-center text-lg bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-dark transition-all" placeholder="00" min="0" max="59" required>
                     </div>
                 </div>
                 <div class="text-center my-6">
@@ -91,156 +80,236 @@
                 </div>
             </form>
 
+            <section id="explicacoes" class="my-12">
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Entenda os Cálculos</h2>
+                <div class="space-y-4 max-w-3xl mx-auto">
+                    <div class="faq-item bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                        <div class="faq-question">
+                            <button class="w-full flex justify-between items-center text-left font-semibold text-gray-800" aria-expanded="false" aria-controls="faq-answer-calc-1">
+                                <span>O que é o Teste de VAM (a partir dos 3km)?</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 chevron-icon transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                            </button>
+                        </div>
+                        <div id="faq-answer-calc-1" class="faq-answer hidden mt-4 text-gray-700 prose prose-sm max-w-none">
+                            <p>O teste de 3km é uma forma excelente de estimar sua VAM (Velocidade Aeróbica Máxima). A velocidade média que você consegue sustentar durante um esforço máximo de 3km está muito próxima da sua VAM real. Essa velocidade se torna a referência (100% VAM) para calcularmos todas as suas zonas de treino de forma precisa.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                        <div class="faq-question">
+                            <button class="w-full flex justify-between items-center text-left font-semibold text-gray-800" aria-expanded="false" aria-controls="faq-answer-calc-2">
+                                <span>O que são as Zonas de Treinamento por %VAM?</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 chevron-icon transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                            </button>
+                        </div>
+                        <div id="faq-answer-calc-2" class="faq-answer hidden mt-4 text-gray-700 prose prose-sm max-w-none">
+                            <p>Após descobrir sua VAM, podemos definir Zonas de Treinamento como percentuais dessa velocidade. Cada percentual corresponde a uma intensidade e a um objetivo fisiológico diferente (recuperação, resistência, limiar, etc.). Treinar com base em %VAM é uma das formas mais eficazes de garantir que você está aplicando o estímulo correto para cada tipo de treino, otimizando seus resultados.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <div id="error-message" class="hidden mt-4 text-center text-red-600 font-medium p-3 bg-red-100 rounded-lg" aria-live="assertive"></div>
 
             <div id="results" class="hidden opacity-0 transform -translate-y-4 transition-all duration-500" tabindex="-1" aria-live="polite">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 text-center">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8 text-center">
                     <div class="bg-primary-light p-4 rounded-lg">
-                        <p class="text-sm font-medium text-primary-dark">VO₂ Máx Estimado</p>
-                        <p id="vo2maxResult" class="text-3xl font-bold text-primary"></p>
+                        <p class="text-sm font-medium text-primary-dark">VAM Estimada</p>
+                        <p id="vamResult" class="text-3xl font-bold text-primary"></p>
+                    </div>
+                    <div class="bg-blue-100 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-blue-800">VO₂ Máx Estimado</p>
+                        <p id="vo2maxResult" class="text-3xl font-bold text-blue-700"></p>
                     </div>
                     <div class="bg-green-100 p-4 rounded-lg">
-                        <p class="text-sm font-medium text-green-800">Pace Médio do Teste (vVO₂Max)</p>
+                        <p class="text-sm font-medium text-green-800">Pace na VAM (vVAM)</p>
                         <p id="paceResult" class="text-3xl font-bold text-green-700"></p>
                     </div>
                 </div>
 
-                <h3 class="text-xl font-bold text-gray-800 text-center mb-4">Zonas de Treinamento e Percepção de Esforço (PSE)</h3>
+                <div id="projection-section" class="mb-12">
+                    <h3 class="text-xl font-bold text-gray-800 text-center mb-4">Projeção de Tempos de Prova</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                             <caption class="sr-only">Tabela com a projeção de tempos para provas de 5km, 10km e 21.1km.</caption>
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Distância</th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Tempo Estimado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectionTable" class="divide-y divide-gray-200"></tbody>
+                        </table>
+                    </div>
+                </div>
 
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-4">Zonas de Treinamento (%VAM)</h3>
                 <div class="overflow-x-auto">
                     <table class="min-w-full bg-white border border-gray-200 rounded-lg">
-                        <caption class="sr-only">Tabela de Zonas de Treinamento com base no seu resultado, incluindo a zona, a escala de percepção de esforço (PSE), a descrição do esforço e o pace sugerido por quilômetro.</caption>
+                        <caption class="sr-only">Tabela de Zonas de Treinamento com base no seu resultado.</caption>
                         <thead class="bg-gray-50">
                             <tr>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Zona</th>
-                                <th scope="col" class="px-4 py-3 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">PSE (1-10)</th>
-                                <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Descrição</th>
+                                <th scope="col" class="px-4 py-3 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Intensidade (%VAM)</th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Pace Sugerido</th>
                             </tr>
                         </thead>
                         <tbody id="pacesTable" class="divide-y divide-gray-200"></tbody>
                     </table>
                 </div>
-                <p class="text-xs text-gray-500 mt-4 text-center">*Baseado na fórmula de Daniels e Gilbert. Procure orientação profissional.</p>
+                <p class="text-xs text-gray-500 mt-4 text-center">*Cálculos e projeções são estimativas para orientação. Procure um profissional.</p>
             </div>
         </div>
     </main>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Seleção de Elementos do DOM ---
+        const form = document.getElementById('calculatorForm');
+        const minInput = document.getElementById('minutes');
+        const secInput = document.getElementById('seconds');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const errorBox = document.getElementById('error-message');
+        const results = document.getElementById('results');
+        const vamDisplay = document.getElementById('vamResult');
+        const vo2Display = document.getElementById('vo2maxResult');
+        const paceDisplay = document.getElementById('paceResult');
+        const pacesTableBody = document.getElementById('pacesTable');
+        const projectionTableBody = document.getElementById('projectionTable');
 
-    <footer role="contentinfo" class="bg-gray-900 text-gray-400 py-8">
-        <div class="container mx-auto text-center">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="https://www.instagram.com/boracorrerclub/" target="_blank" rel="noopener noreferrer" aria-label="Nosso Instagram" class="text-gray-400 transition-all duration-300 social-icon"><i data-feather="instagram" class="w-6 h-6"></i></a>
-            </div>
-            <p class="mb-2">&copy; 2025 Bora Correr Club. Todos os direitos reservados.</p>
-            <p class="flex items-center justify-center gap-1 mb-4">Feito com <i data-feather="heart" class="inline-block h-4 w-4 text-primary" aria-hidden="true" focusable="false"></i> por uma comunidade de apaixonados.</p>
-        </div>
-    </footer>
+        // --- Constantes e Configurações ---
+        const ZONAS_DE_TREINO = [
+            { name: 'Z5: VO₂ Máx', intensity: '95-105%', lower: 0.95, upper: 1.05, colorClass: 'z5' },
+            { name: 'Z4: Limiar Anaeróbio', intensity: '88-92%', lower: 0.88, upper: 0.92, colorClass: 'z4' },
+            { name: 'Z3: Ritmo Controlado', intensity: '80-85%', lower: 0.80, upper: 0.85, colorClass: 'z3' },
+            { name: 'Z2: Endurance', intensity: '70-75%', lower: 0.70, upper: 0.75, colorClass: 'z2' },
+            { name: 'Z1: Recuperação', intensity: '< 65%', lower: 0.60, upper: 0.65, colorClass: 'z1' }
+        ];
 
-    <script src="https://unpkg.com/feather-icons" defer></script>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', () => {
-            feather.replace();
+        // --- Funções Puras e Auxiliares ---
 
-            // --- Lógica da Calculadora ---
-            const form = document.getElementById('calculatorForm');
-            const minInput = document.getElementById('minutes');
-            const secInput = document.getElementById('seconds');
-            const calculateBtn = document.getElementById('calculateBtn');
-            const errorBox = document.getElementById('error-message');
-            const results = document.getElementById('results');
-            const vo2Display = document.getElementById('vo2maxResult');
-            const paceDisplay = document.getElementById('paceResult');
-            const tableBody = document.getElementById('pacesTable');
-
-            const ZONAS_DE_TREINO = [
-                { name: 'Z5', pse: '9-10', desc: 'Máximo', example: 'Esforço máximo', upper: 0.99, lower: 0.90, colorClass: 'z5' },
-                { name: 'Z4', pse: '7-8', desc: 'Muito Intenso', example: 'Difícil de manter', upper: 1.05, lower: 1.00, colorClass: 'z4' },
-                { name: 'Z3', pse: '5-6', desc: 'Intenso', example: 'Respiração profunda', upper: 1.14, lower: 1.06, colorClass: 'z3' },
-                { name: 'Z2', pse: '3-4', desc: 'Moderado', example: 'Confortável', upper: 1.29, lower: 1.15, colorClass: 'z2' },
-                { name: 'Z1', pse: '1-2', desc: 'Leve', example: 'Muito fácil', lower: 1.30, colorClass: 'z1' }
+        function formatTime(segundos) {
+            const min = Math.floor(segundos / 60);
+            const sec = Math.round(segundos % 60);
+            return `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+        }
+        
+        function calcularProjecao(vam_kmh) {
+            const pace_vVAM_sec_km = 3600 / vam_kmh;
+            const t1 = pace_vVAM_sec_km; // Tempo para 1km na VAM
+            const d1 = 1;
+            const exponent = 1.06; // Riegel's endurance model exponent
+            const projecoes = [
+                { dist: '5 km', tempo: t1 * Math.pow(5 / d1, exponent) },
+                { dist: '10 km', tempo: t1 * Math.pow(10 / d1, exponent) },
+                { dist: '21.1 km (Meia Maratona)', tempo: t1 * Math.pow(21.0975 / d1, exponent) }
             ];
+            return projecoes;
+        }
 
-            function formatTime(segundos) {
-                const min = Math.floor(segundos / 60);
-                const sec = Math.round(segundos % 60);
-                return `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
-            }
+        // --- Funções de Manipulação do DOM ---
+
+        function showError(msg) {
+            errorBox.textContent = '⚠️ ' + msg;
+            errorBox.classList.remove('hidden');
+            results.classList.add('hidden', 'opacity-0');
+        }
+
+        function hideError() {
+            errorBox.classList.add('hidden');
+        }
+
+        function renderPacesTable(pace_vVAM) {
+            pacesTableBody.innerHTML = '';
+            const fragment = document.createDocumentFragment();
+            [...ZONAS_DE_TREINO].reverse().forEach(z => {
+                const paceMax = pace_vVAM / z.lower;
+                const paceMin = pace_vVAM / z.upper;
+                const tr = document.createElement('tr');
+                const paceText = z.upper ? `${formatTime(paceMax)} - ${formatTime(paceMin)}` : `Mais lento que ${formatTime(paceMax)}`;
+                tr.innerHTML = `
+                    <td class="px-4 py-4"><div class="zone-badge ${z.colorClass} w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm">${z.name.split(':')[0]}</div></td>
+                    <td class="text-center font-semibold text-sm">${z.intensity}</td>
+                    <td class="font-semibold text-sm">${paceText}</td>`;
+                fragment.appendChild(tr);
+            });
+            pacesTableBody.appendChild(fragment);
+        }
+
+        function renderProjectionTable(projecoes) {
+            projectionTableBody.innerHTML = '';
+            const fragment = document.createDocumentFragment();
+            projecoes.forEach(p => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="px-4 py-4 font-medium text-gray-800">${p.dist}</td>
+                    <td class="px-4 py-4 font-semibold text-primary">${formatTime(p.tempo)}</td>`;
+                fragment.appendChild(tr);
+            });
+            projectionTableBody.appendChild(fragment);
+        }
+        
+        // --- Lógica Principal e Event Listeners ---
+
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                const answer = document.getElementById(button.getAttribute('aria-controls'));
+                button.setAttribute('aria-expanded', !isExpanded);
+                answer.classList.toggle('hidden');
+            });
+        });
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            calculateBtn.disabled = true;
+            calculateBtn.textContent = 'Calculando...';
             
-            function calcularVo2max(dist, tempoSeg) {
-                const vel = dist / (tempoSeg / 60);
-                return -4.60 + 0.18225 * vel + 0.000104 * vel ** 2;
-            }
+            const minutes = parseInt(minInput.value, 10);
+            const seconds = parseInt(secInput.value, 10);
 
-            function validarTempo(min, sec) {
-                if (isNaN(min) || isNaN(sec)) {
-                    return 'Insira números válidos para minutos e segundos.';
-                }
-                const totalSec = min * 60 + sec;
-                if (totalSec < 300 || totalSec > 1800) {
-                    return 'Tempo fora do intervalo aceitável (5 a 30 min).';
-                }
-                return null;
-            }
-
-            function showError(msg) {
-                errorBox.textContent = '⚠️ ' + msg;
-                errorBox.classList.remove('hidden');
-                results.classList.add('hidden', 'opacity-0');
-            }
-
-            function hideError() {
-                errorBox.classList.add('hidden');
-            }
-
-            function renderResultsTable(paceKm) {
-                tableBody.innerHTML = '';
-                const fragment = document.createDocumentFragment();
-                [...ZONAS_DE_TREINO].reverse().forEach(z => {
-                    const pMin = paceKm * z.lower;
-                    const pMax = z.upper ? paceKm * z.upper : null;
-                    const tr = document.createElement('tr');
-                    const paceText = pMax ? `${formatTime(pMax)} - ${formatTime(pMin)}` : `Mais lento que ${formatTime(pMin)}`;
-                    tr.innerHTML = `
-                        <td class="px-4 py-4"><div class="zone-badge ${z.colorClass} w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm">${z.name}</div></td>
-                        <td class="text-center font-semibold text-sm">${z.pse}</td>
-                        <td class="text-sm text-gray-600">${z.desc}: <em class="italic">${z.example}</em></td>
-                        <td class="font-semibold text-sm">${paceText}</td>`;
-                    fragment.appendChild(tr);
-                });
-                tableBody.appendChild(fragment);
-            }
-            
-            function handleFormSubmit(e) {
-                e.preventDefault();
-                calculateBtn.disabled = true;
-                calculateBtn.textContent = 'Calculando...';
-                const min = parseInt(minInput.value, 10);
-                const sec = parseInt(secInput.value, 10);
-                const erro = validarTempo(min, sec);
-                if (erro) {
-                    showError(erro);
-                    calculateBtn.disabled = false;
-                    calculateBtn.textContent = 'Calcular Resultados';
-                    return;
-                }
-                hideError();
-                const totalSec = min * 60 + sec;
-                const vo2 = calcularVo2max(3000, totalSec);
-                const paceKm = totalSec / 3;
-                vo2Display.textContent = vo2.toLocaleString('pt-BR', { maximumFractionDigits: 1 });
-                paceDisplay.textContent = formatTime(paceKm) + ' /km';
-                renderResultsTable(paceKm);
-                results.classList.remove('hidden');
-                setTimeout(() => results.classList.remove('opacity-0', '-translate-y-4'), 10);
-                results.focus();
+            if (isNaN(minutes) || isNaN(seconds) || (minutes === 0 && seconds === 0)) {
+                showError('Insira um tempo válido.');
                 calculateBtn.disabled = false;
                 calculateBtn.textContent = 'Calcular Resultados';
+                return;
             }
+            const totalSec = minutes * 60 + seconds;
+            if (totalSec < 300 || totalSec > 1800) { // Validação para tempo de 3km (5 a 30 min)
+                 showError('Insira um tempo realista (entre 5min e 30min).');
+                calculateBtn.disabled = false;
+                calculateBtn.textContent = 'Calcular Resultados';
+                return;
+            }
+            hideError();
 
-            if(form) {
-                form.addEventListener('submit', handleFormSubmit);
-            }
-        });
+            // Cálculos baseados no tempo de 3km
+            const vel_m_min = 3000 / (totalSec / 60);
+            const vam_kmh = vel_m_min * 0.06; // Converte m/min para km/h
+            const vo2max = vam_kmh * 3.5;
+            const pace_vVAM = 3600 / vam_kmh; // Pace na VAM em segundos/km
+            const projecoes = calcularProjecao(vam_kmh);
+            
+            // Exibir resultados
+            vamDisplay.textContent = `${vam_kmh.toFixed(1)} km/h`;
+            vo2Display.textContent = vo2max.toFixed(1);
+            paceDisplay.textContent = `${formatTime(pace_vVAM)} /km`;
+
+            renderPacesTable(pace_vVAM);
+            renderProjectionTable(projecoes);
+
+            results.classList.remove('hidden');
+            setTimeout(() => {
+                results.classList.remove('opacity-0', '-translate-y-4');
+                results.focus();
+                results.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 10);
+            
+            calculateBtn.disabled = false;
+            calculateBtn.textContent = 'Calcular Resultados';
+        }
+
+        form.addEventListener('submit', handleFormSubmit);
+    });
     </script>
 </body>
 </html>
