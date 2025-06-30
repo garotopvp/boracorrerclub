@@ -5,17 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Título e Meta Descrição Otimizados para SEO -->
     <title>Bora Correr Club | Assessoria de Corrida em Santos</title>
     <meta name="description" content="Junte-se ao Bora Correr Club em Santos! Mais que uma assessoria de corrida, somos uma comunidade apaixonada por saúde e superação. Treinos para todos os níveis.">
 
+    <!-- Canonical Tag -->
     <link rel="canonical" href="https://www.boracorrerclub.com.br/">
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.boracorrerclub.com.br/">
     <meta property="og:title" content="Bora Correr Club | Juntos, vamos mais longe">
     <meta property="og:description" content="Mais que uma assessoria de corrida, uma comunidade apaixonada por saúde, superação e amizade.">
     <meta property="og:image" content="https://i.postimg.cc/rm05fDTG/Meniinas.jpg">
 
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.boracorrerclub.com.br/">
     <meta property="twitter:title" content="Bora Correr Club | Juntos, vamos mais longe">
@@ -25,14 +29,11 @@
     <!-- Tailwind CSS (Play CDN para prototipagem) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Poppins com display=swap para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Arquivo de Estilos Personalizados -->
-    <link rel="stylesheet" href="assets/css/estilos.css">
-
     <script>
         // Configuração customizada do Tailwind
         tailwind.config = {
@@ -50,7 +51,7 @@
         }
     </script>
 
-    <!-- Dados Estruturados (Schema Markup) -->
+    <!-- Dados Estruturados (Schema Markup) para SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -71,36 +72,64 @@
       ]
     }
     </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .principle-card, .training-card, .testimonial-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .principle-card:hover, .training-card:hover, .testimonial-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); }
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(242, 5, 97, 0.25); }
+        .social-icon:hover { transform: scale(1.2); color: #f20561; }
+        .faq-question button[aria-expanded="true"] .chevron-icon { transform: rotate(180deg); }
+        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+        .nav-link:hover { color: #f20561; transform: translateY(-2px); }
+        .blog-modal-content h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .blog-modal-content p { margin-bottom: 1rem; }
+        .blog-modal-content ul { list-style-position: inside; margin-left: 1rem; margin-bottom: 1rem; }
+        .blog-modal-content li { margin-bottom: 0.5rem; }
+        
+        .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: -999; }
+        .skip-link:focus, .skip-link:active { position: static; width: auto; height: auto; overflow: visible; z-index: 999; background-color: #f20561; color: white; padding: 1rem; display: inline-block; }
+
+        @media (prefers-reduced-motion: reduce) {
+          .fade-in-section, .cta-button, .principle-card, .training-card, .testimonial-card, .social-icon, .nav-link { transition: none !important; }
+        }
+    </style>
 </head>
 <body class="bg-white text-gray-800">
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-    <!-- Cabeçalho com Navegação Mobile -->
     <header role="banner" class="bg-gray-900 bg-opacity-50 backdrop-blur-sm fixed top-0 left-0 right-0 z-30 p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" aria-label="Bora Correr Club - Página Inicial">
+            <a href="index.html" aria-label="Bora Correr Club - Página Inicial">
                 <img src="https://i.postimg.cc/9MVkvpvW/Captura-de-tela-2025-06-02-134628.png" alt="Logo do Bora Correr Club" class="h-12 w-auto">
             </a>
+            
             <nav role="navigation" aria-label="Navegação principal" class="hidden md:block">
                 <div class="flex space-x-6">
                     <a href="#sobre" class="text-white transition-all duration-300 nav-link">Sobre Nós</a>
                     <a href="#treinos" class="text-white transition-all duration-300 nav-link">Treinos</a>
+                    <a href="calculadora.html" class="text-white transition-all duration-300 nav-link">Calculadora</a>
                     <a href="#blog" class="text-white transition-all duration-300 nav-link">Blog</a>
                     <a href="#faq" class="text-white transition-all duration-300 nav-link">FAQ</a>
                 </div>
             </nav>
+
             <div class="md:hidden">
                 <button id="menu-btn" class="text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
                     <i id="menu-icon" data-feather="menu" class="w-8 h-8 transition-transform duration-300"></i>
                 </button>
             </div>
         </div>
+        
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-80 absolute top-full left-0 w-full">
             <nav class="flex flex-col items-center space-y-4 py-8">
-                 <a href="#sobre" class="text-white text-xl hover:text-primary">Sobre Nós</a>
-                 <a href="#treinos" class="text-white text-xl hover:text-primary">Treinos</a>
-                 <a href="#blog" class="text-white text-xl hover:text-primary">Blog</a>
-                 <a href="#faq" class="text-white text-xl hover:text-primary">FAQ</a>
+               <a href="#sobre" class="text-white text-xl hover:text-primary">Sobre Nós</a>
+               <a href="#treinos" class="text-white text-xl hover:text-primary">Treinos</a>
+               <a href="calculadora.html" class="text-white text-xl hover:text-primary">Calculadora</a>
+               <a href="#blog" class="text-white text-xl hover:text-primary">Blog</a>
+               <a href="#faq" class="text-white text-xl hover:text-primary">FAQ</a>
             </nav>
         </div>
     </header>
@@ -162,7 +191,7 @@
         <section id="depoimentos" class="py-20 bg-gray-50 fade-in-section">
             <div class="container mx-auto px-4 text-center"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">O que nossos atletas dizem</h2><p class="max-w-2xl mx-auto mb-12 text-gray-700">A prova social de que aqui a jornada é incrível.</p><div class="grid md:grid-cols-3 gap-8"><div class="p-8 bg-white rounded-lg shadow-lg testimonial-card"><img src="https://placehold.co/80x80/fef2f6/f20561?text=A" alt="Avatar da corredora Ana Silva." loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4"><p class="text-gray-700 italic mb-4">"O Bora Correr mudou minha vida! Encontrei amigos, superei desafios e hoje sou mais feliz e saudável."</p><cite class="font-bold not-italic text-primary">- Ana Silva</cite></div><div class="p-8 bg-white rounded-lg shadow-lg testimonial-card"><img src="https://placehold.co/80x80/fef2f6/f20561?text=M" alt="Avatar do corredor Marcos Rocha." loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4"><p class="text-gray-700 italic mb-4">"A metodologia é fantástica. Com a planilha personalizada, baixei meu tempo nos 10k <strong class='text-primary-dark'>de 55 para 48 minutos</strong> em 4 meses. Impossível sem o Caique e a turma!"</p><cite class="font-bold not-italic text-primary">- Marcos Rocha</cite></div><div class="p-8 bg-white rounded-lg shadow-lg testimonial-card"><img src="https://placehold.co/80x80/fef2f6/f20561?text=J" alt="Avatar da corredora Juliana Costa." loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4"><p class="text-gray-700 italic mb-4">"Comecei do zero, com medo. O apoio dos coaches e do grupo foi fundamental. Hoje, correr é minha terapia!"</p><cite class="font-bold not-italic text-primary">- Juliana Costa</cite></div></div></div>
         </section>
-        
+
         <!-- Seção do Blog -->
         <section id="blog" class="py-20 bg-gray-50 fade-in-section">
             <div class="container mx-auto px-4 text-center">
@@ -206,9 +235,11 @@
             <div class="container mx-auto text-center px-4">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">E aí, bora correr com a gente?</h2>
                 <p class="text-lg mb-4 max-w-xl mx-auto">Dê o primeiro passo hoje mesmo para transformar sua vida através da corrida.</p>
+                
                 <div class="bg-primary/20 border border-primary text-white p-4 rounded-lg max-w-lg mx-auto mb-8">
                     <p class="font-semibold">BÔNUS ESPECIAL: Agende seu treino experimental e <strong class="underline">ganhe 15% de desconto</strong> na primeira mensalidade!</p>
                 </div>
+
                 <p class="text-lg mb-8 max-w-xl mx-auto">Agende seu treino experimental pelo WhatsApp!</p>
                 <a href="https://wa.me/5513996890611" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-bold py-4 px-10 rounded-full text-lg uppercase cta-button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413 0 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.45L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.651 4.383 1.803 6.133l-.903 3.313 3.41-1.74z"/></svg>
@@ -251,8 +282,227 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413 0 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.45L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.651 4.383 1.803 6.133l-.903 3.313 3.41-1.74z"/></svg>
     </a>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/feather-icons" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogPosts = [
+                {
+                    id: 'post-tenis',
+                    title: '5 Dicas para Escolher o Tênis de Corrida Ideal',
+                    date: '2025-06-27',
+                    summary: 'Escolher o tênis certo é crucial para evitar lesões e melhorar sua performance...',
+                    image: 'https://placehold.co/600x400/cccccc/000000?text=Dica+de+Corrida',
+                    alt: 'Atleta amarrando o tênis.',
+                    content: `
+                        <p>Escolher o tênis de corrida certo é um dos investimentos mais importantes que um corredor pode fazer. Não se trata apenas de estilo ou cor; é uma questão de saúde, conforto e performance. Um bom par de tênis pode prevenir lesões, enquanto um inadequado pode causá-las. Aqui estão 5 dicas essenciais para te ajudar a fazer a escolha certa.</p>
+                        <h3>1. Conheça o seu tipo de pisada</h3>
+                        <p>A forma como seu pé toca o chão ao correr é fundamental. Existem três tipos principais de pisada:</p>
+                        <ul>
+                            <li><strong>Neutra:</strong> O pé aterrissa de forma uniforme, distribuindo o impacto eficientemente.</li>
+                            <li><strong>Pronada:</strong> O tornozelo gira para dentro mais do que o ideal, um movimento para absorver o choque.</li>
+                            <li><strong>Supinada:</strong> O tornozelo gira para fora, focando o impacto na parte externa do pé.</li>
+                        </ul>
+                        <p>Lojas especializadas podem fazer um teste de pisada. Saber o seu tipo ajuda a escolher um tênis com o suporte adequado para corrigir ou acomodar seu movimento natural.</p>
+                        <h3>2. Considere o terreno onde você corre</h3>
+                        <p>Onde você pretende correr a maior parte do tempo? A superfície impacta diretamente no tipo de tênis que você precisa.</p>
+                        <ul>
+                            <li><strong>Asfalto/Concreto:</strong> Exige tênis com alto poder de amortecimento para absorver o impacto de superfícies duras.</li>
+                            <li><strong>Esteira:</strong> Similar ao asfalto, o amortecimento é bem-vindo.</li>
+                            <li><strong>Trilha (Trail Running):</strong> Requer um solado com mais tração (cravos), maior proteção contra pedras e detritos, e materiais mais robustos.</li>
+                        </ul>
+                        <h3>3. Pense no seu objetivo e volume de treino</h3>
+                        <p>Seu objetivo principal dita o tipo de tênis. Tênis de competição são leves, rápidos e com menos amortecimento, ideais para provas. Já os tênis de rodagem, para treinos diários, são mais estruturados, duráveis e oferecem mais conforto e proteção para acumular quilometragem com segurança.</p>
+                        <h3>4. Não se apegue ao seu tamanho casual</h3>
+                        <p>Seus pés incham durante a corrida devido ao aumento do fluxo sanguíneo. Por isso, é crucial comprar um tênis de corrida que seja de meio a um número maior que o seu calçado do dia a dia. A regra de ouro é garantir que haja um espaço equivalente à largura de um polegar entre o seu dedão e a ponta do tênis.</p>
+                        <h3>5. O conforto é rei: teste antes de comprar</h3>
+                        <p>Nenhuma análise técnica substitui a sensação nos seus pés. Experimente o tênis no final do dia, quando seus pés estão mais inchados. Use as meias que você normalmente usa para correr. Se possível, dê uma corridinha dentro da loja. O tênis ideal deve parecer uma extensão do seu corpo: sem pontos de pressão, sem atritos e com um ajuste seguro, mas não apertado.</p>
+                        <p class="mt-6 font-semibold">Investir tempo para encontrar o tênis perfeito não é um luxo, é uma necessidade. Com o par certo, sua corrida se torna mais prazerosa, segura e eficiente. Bora correr!</p>
+                    `
+                },
+                {
+                    id: 'post-iniciante',
+                    title: 'Como Começar a Correr do Zero Absoluto',
+                    date: '2025-07-15',
+                    summary: 'Sempre quis correr mas não sabe por onde começar? Este guia é para você...',
+                    image: 'https://placehold.co/600x400/cccccc/000000?text=Iniciante',
+                    alt: 'Pessoa caminhando em uma pista de corrida ao amanhecer.',
+                    content: `
+                        <h3>Começar a correr pode ser intimidante, mas é uma das jornadas mais recompensadoras.</h3>
+                        <p>A chave é começar devagar e ser consistente. Não se preocupe com velocidade ou distância no início. O mais importante é criar o hábito.</p>
+                        <p>Siga este plano simples:</p>
+                        <ul>
+                            <li><strong>Semana 1-2:</strong> Comece com o método "Caminhada-Corrida". Alterne 5 minutos de caminhada com 1 minuto de corrida leve. Repita 4 a 5 vezes. Faça isso 3 vezes por semana.</li>
+                            <li><strong>Semana 3-4:</strong> Aumente o tempo de corrida para 2-3 minutos e mantenha a caminhada em 4-5 minutos.</li>
+                            <li><strong>Escute seu corpo:</strong> Dores leves são normais, mas dores agudas não. Descanse se precisar.</li>
+                            <li><strong>Hidrate-se:</strong> Beba água antes, durante e depois dos treinos.</li>
+                        </ul>
+                        <p class="mt-6 font-semibold">O progresso virá com o tempo. Seja paciente com você mesmo e celebre cada pequena vitória. Estamos aqui para te ajudar em cada passo!</p>
+                    `
+                }
+            ];
+
+            feather.replace();
+
+            const setupEventListeners = () => {
+                const sections = document.querySelectorAll('.fade-in-section');
+                if (sections.length > 0) { const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 }); sections.forEach(section => observer.observe(section)); }
+                
+                const menuBtn = document.getElementById('menu-btn'); const mobileMenu = document.getElementById('mobile-menu'); const menuIcon = document.getElementById('menu-icon');
+                if(menuBtn && mobileMenu) { menuBtn.addEventListener('click', () => { const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true'; menuBtn.setAttribute('aria-expanded', !isExpanded); mobileMenu.classList.toggle('hidden'); menuIcon.setAttribute('data-feather', isExpanded ? 'menu' : 'x'); feather.replace(); }); }
+                
+                document.querySelectorAll('.faq-item button').forEach(button => { button.addEventListener('click', () => { const isExpanded = button.getAttribute('aria-expanded') === 'true'; const answer = document.getElementById(button.getAttribute('aria-controls')); button.setAttribute('aria-expanded', !isExpanded); answer.classList.toggle('hidden'); }); });
+
+                const blogModal = document.getElementById('blog-modal');
+                const modalTitle = document.getElementById('blog-modal-title');
+                const modalContent = document.getElementById('blog-modal-content');
+                const modalDescription = document.getElementById('blog-modal-description');
+                const closeButtons = document.querySelectorAll('.close-modal-btn, #blog-modal-overlay');
+
+                document.querySelectorAll('.open-blog-modal-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const postId = e.currentTarget.dataset.postId;
+                        const post = blogPosts.find(p => p.id === postId);
+                        if(post) {
+                            modalTitle.textContent = post.title;
+                            modalContent.innerHTML = post.content;
+                            modalDescription.textContent = post.summary;
+                            blogModal.classList.remove('hidden');
+                            blogModal.classList.add('flex');
+                            document.body.style.overflow = 'hidden';
+                            document.querySelector('#blog-modal .close-modal-btn').focus();
+                        }
+                    });
+                });
+
+                const closeModal = () => { blogModal.classList.add('hidden'); blogModal.classList.remove('flex'); document.body.style.overflow = 'auto'; };
+                closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+                document.addEventListener('keydown', (e) => { if (e.key === "Escape" && !blogModal.classList.contains('hidden')) closeModal(); });
+            };
+
+            const generateBlogCards = () => {
+                const container = document.getElementById('blog-posts-container');
+                if (!container) return;
+                let cardsHtml = '';
+                blogPosts.forEach(post => {
+                    cardsHtml += `
+                        <article class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="${post.image}" alt="${post.alt}" class="w-full h-48 object-cover" loading="lazy">
+                            <div class="p-6">
+                                <time datetime="${post.date}" class="text-sm text-gray-500">${new Date(post.date + 'T00:00:00-03:00').toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                                <h3 class="text-xl font-bold my-2">${post.title}</h3>
+                                <p class="text-gray-700 mb-4">${post.summary}</p>
+                                <button data-post-id="${post.id}" class="open-blog-modal-btn font-bold text-primary hover:underline">Leia Mais &raquo;</button>
+                            </div>
+                        </article>
+                    `;
+                });
+                container.innerHTML = cardsHtml;
+                feather.replace();
+            };
+            
+            // --- Lógica da Calculadora ---
+            const form = document.getElementById('calculatorForm');
+            const minInput = document.getElementById('minutes');
+            const secInput = document.getElementById('seconds');
+            const calculateBtn = document.getElementById('calculateBtn');
+            const errorBox = document.getElementById('error-message');
+            const results = document.getElementById('results');
+            const vo2Display = document.getElementById('vo2maxResult');
+            const paceDisplay = document.getElementById('paceResult');
+            const tableBody = document.getElementById('pacesTable');
+
+            const ZONAS_DE_TREINO = [
+                { name: 'Z5', pse: '9-10', desc: 'Máximo', example: 'Esforço máximo', upper: 0.99, lower: 0.90, colorClass: 'z5' },
+                { name: 'Z4', pse: '7-8', desc: 'Muito Intenso', example: 'Difícil de manter', upper: 1.05, lower: 1.00, colorClass: 'z4' },
+                { name: 'Z3', pse: '5-6', desc: 'Intenso', example: 'Respiração profunda', upper: 1.14, lower: 1.06, colorClass: 'z3' },
+                { name: 'Z2', pse: '3-4', desc: 'Moderado', example: 'Confortável', upper: 1.29, lower: 1.15, colorClass: 'z2' },
+                { name: 'Z1', pse: '1-2', desc: 'Leve', example: 'Muito fácil', lower: 1.30, colorClass: 'z1' }
+            ];
+
+            function formatTime(segundos) {
+                const min = Math.floor(segundos / 60);
+                const sec = Math.round(segundos % 60);
+                return `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+            }
+            
+            function calcularVo2max(dist, tempoSeg) {
+                const vel = dist / (tempoSeg / 60);
+                return -4.60 + 0.18225 * vel + 0.000104 * vel ** 2;
+            }
+
+            function validarTempo(min, sec) {
+                if (isNaN(min) || isNaN(sec)) {
+                    return 'Insira números válidos para minutos e segundos.';
+                }
+                const totalSec = min * 60 + sec;
+                if (totalSec < 300 || totalSec > 1800) {
+                    return 'Tempo fora do intervalo aceitável (5 a 30 min).';
+                }
+                return null;
+            }
+
+            function showError(msg) {
+                errorBox.textContent = '⚠️ ' + msg;
+                errorBox.classList.remove('hidden');
+                results.classList.add('hidden', 'opacity-0');
+            }
+
+            function hideError() {
+                errorBox.classList.add('hidden');
+            }
+
+            function renderResultsTable(paceKm) {
+                tableBody.innerHTML = '';
+                const fragment = document.createDocumentFragment();
+                [...ZONAS_DE_TREINO].reverse().forEach(z => {
+                    const pMin = paceKm * z.lower;
+                    const pMax = z.upper ? paceKm * z.upper : null;
+                    const tr = document.createElement('tr');
+                    const paceText = pMax ? `${formatTime(pMax)} - ${formatTime(pMin)}` : `Mais lento que ${formatTime(pMin)}`;
+                    tr.innerHTML = `
+                        <td class="px-4 py-4"><div class="zone-badge ${z.colorClass} w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm">${z.name}</div></td>
+                        <td class="text-center font-semibold text-sm">${z.pse}</td>
+                        <td class="text-sm text-gray-600">${z.desc}: <em class="italic">${z.example}</em></td>
+                        <td class="font-semibold text-sm">${paceText}</td>`;
+                    fragment.appendChild(tr);
+                });
+                tableBody.appendChild(fragment);
+            }
+            
+            function handleFormSubmit(e) {
+                e.preventDefault();
+                calculateBtn.disabled = true;
+                calculateBtn.textContent = 'Calculando...';
+                const min = parseInt(minInput.value, 10);
+                const sec = parseInt(secInput.value, 10);
+                const erro = validarTempo(min, sec);
+                if (erro) {
+                    showError(erro);
+                    calculateBtn.disabled = false;
+                    calculateBtn.textContent = 'Calcular Resultados';
+                    return;
+                }
+                hideError();
+                const totalSec = min * 60 + sec;
+                const vo2 = calcularVo2max(3000, totalSec);
+                const paceKm = totalSec / 3;
+                vo2Display.textContent = vo2.toLocaleString('pt-BR', { maximumFractionDigits: 1 });
+                paceDisplay.textContent = formatTime(paceKm) + ' /km';
+                renderResultsTable(paceKm);
+                results.classList.remove('hidden');
+                setTimeout(() => results.classList.remove('opacity-0', '-translate-y-4'), 10);
+                results.focus();
+                calculateBtn.disabled = false;
+                calculateBtn.textContent = 'Calcular Resultados';
+            }
+
+            if(form) {
+                form.addEventListener('submit', handleFormSubmit);
+            }
+            
+            generateBlogCards();
+            setupEventListeners();
+        });
+    </script>
 </body>
 </html>
